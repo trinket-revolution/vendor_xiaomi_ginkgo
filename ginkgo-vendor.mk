@@ -1,5 +1,4 @@
 # Copyright (C) 2019-2020 The LineageOS Project
-# Copyright (C) 2019-2020 The KomodoOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,6 +18,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/ginkgo
 
 PRODUCT_COPY_FILES += \
+    vendor/xiaomi/ginkgo/proprietary/bin/cameraserver:$(TARGET_COPY_OUT_SYSTEM)/bin/cameraserver \
     vendor/xiaomi/ginkgo/proprietary/etc/cne/Nexus/ATT/ATT_profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/cne/Nexus/ATT/ATT_profiles.xml \
     vendor/xiaomi/ginkgo/proprietary/etc/cne/Nexus/ROW/ROW_profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/cne/Nexus/ROW/ROW_profiles.xml \
     vendor/xiaomi/ginkgo/proprietary/etc/cne/Nexus/VZW/VZW_profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/cne/Nexus/VZW/VZW_profiles.xml \
@@ -27,10 +27,28 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/etc/permissions/qti_permissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/qti_permissions.xml \
     vendor/xiaomi/ginkgo/proprietary/framework/audiosphere.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/audiosphere.jar \
     vendor/xiaomi/ginkgo/proprietary/framework/tcmclient.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/tcmclient.jar \
+    vendor/xiaomi/ginkgo/proprietary/lib/android.hardware.camera.common@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib/android.hardware.camera.common@1.0.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/android.hardware.camera.device@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib/android.hardware.camera.device@1.0.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/android.hardware.camera.device@3.2.so:$(TARGET_COPY_OUT_SYSTEM)/lib/android.hardware.camera.device@3.2.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/android.hardware.camera.device@3.3.so:$(TARGET_COPY_OUT_SYSTEM)/lib/android.hardware.camera.device@3.3.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/android.hardware.camera.device@3.4.so:$(TARGET_COPY_OUT_SYSTEM)/lib/android.hardware.camera.device@3.4.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/android.hardware.camera.provider@2.4.so:$(TARGET_COPY_OUT_SYSTEM)/lib/android.hardware.camera.provider@2.4.so \
     vendor/xiaomi/ginkgo/proprietary/lib/com.qualcomm.qti.ant@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib/com.qualcomm.qti.ant@1.0.so \
     vendor/xiaomi/ginkgo/proprietary/lib/fm_helium.so:$(TARGET_COPY_OUT_SYSTEM)/lib/fm_helium.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/libcameraservice.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libcameraservice.so \
     vendor/xiaomi/ginkgo/proprietary/lib/libfm-hci.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libfm-hci.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/libshim_cameraservice.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libshim_cameraservice.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libuq.so:$(TARGET_COPY_OUT_VENDOR)/lib/libuq.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/vendor.qti.hardware.camera.device@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib/vendor.qti.hardware.camera.device@1.0.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/vndk-29/android.hardware.camera.common@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib/vndk-29/android.hardware.camera.common@1.0.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/vndk-29/android.hardware.camera.device@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib/vndk-29/android.hardware.camera.device@1.0.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/vndk-29/android.hardware.camera.device@3.2.so:$(TARGET_COPY_OUT_SYSTEM)/lib/vndk-29/android.hardware.camera.device@3.2.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/vndk-29/android.hardware.camera.device@3.3.so:$(TARGET_COPY_OUT_SYSTEM)/lib/vndk-29/android.hardware.camera.device@3.3.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/vndk-29/android.hardware.camera.device@3.4.so:$(TARGET_COPY_OUT_SYSTEM)/lib/vndk-29/android.hardware.camera.device@3.4.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/vndk-29/android.hardware.camera.metadata@3.2.so:$(TARGET_COPY_OUT_SYSTEM)/lib/vndk-29/android.hardware.camera.metadata@3.2.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/vndk-29/android.hardware.camera.metadata@3.3.so:$(TARGET_COPY_OUT_SYSTEM)/lib/vndk-29/android.hardware.camera.metadata@3.3.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/vndk-29/android.hardware.camera.provider@2.4.so:$(TARGET_COPY_OUT_SYSTEM)/lib/vndk-29/android.hardware.camera.provider@2.4.so \
+    vendor/xiaomi/ginkgo/proprietary/lib/vndk-29/libcamera_metadata.so:$(TARGET_COPY_OUT_SYSTEM)/lib/vndk-29/libcamera_metadata.so \
     vendor/xiaomi/ginkgo/proprietary/lib64/com.qualcomm.qti.ant@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/com.qualcomm.qti.ant@1.0.so \
     vendor/xiaomi/ginkgo/proprietary/lib64/fm_helium.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/fm_helium.so \
     vendor/xiaomi/ginkgo/proprietary/lib64/libdiag_system.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libdiag_system.so \
@@ -123,6 +141,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/bin/garden_app:$(TARGET_COPY_OUT_VENDOR)/bin/garden_app \
     vendor/xiaomi/ginkgo/proprietary/vendor/bin/hvdcp_opti:$(TARGET_COPY_OUT_VENDOR)/bin/hvdcp_opti \
     vendor/xiaomi/ginkgo/proprietary/vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.bluetooth@1.0-service-qti \
+    vendor/xiaomi/ginkgo/proprietary/vendor/bin/hw/android.hardware.camera.provider@2.4-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.camera.provider@2.4-service \
     vendor/xiaomi/ginkgo/proprietary/vendor/bin/hw/android.hardware.drm@1.2-service.widevine:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.drm@1.2-service.widevine \
     vendor/xiaomi/ginkgo/proprietary/vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.gatekeeper@1.0-service-qti \
     vendor/xiaomi/ginkgo/proprietary/vendor/bin/hw/android.hardware.gnss@2.0-service-qti:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.gnss@2.0-service-qti \
@@ -156,7 +175,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/bin/msm_irqbalance:$(TARGET_COPY_OUT_VENDOR)/bin/msm_irqbalance \
     vendor/xiaomi/ginkgo/proprietary/vendor/bin/netmgrd:$(TARGET_COPY_OUT_VENDOR)/bin/netmgrd \
     vendor/xiaomi/ginkgo/proprietary/vendor/bin/nv_mac:$(TARGET_COPY_OUT_VENDOR)/bin/nv_mac \
-    vendor/xiaomi/ginkgo/proprietary/vendor/bin/nqnfcinfo:$(TARGET_COPY_OUT_VENDOR)/bin/nqnfcinfo \
     vendor/xiaomi/ginkgo/proprietary/vendor/bin/pd-mapper:$(TARGET_COPY_OUT_VENDOR)/bin/pd-mapper \
     vendor/xiaomi/ginkgo/proprietary/vendor/bin/pm-proxy:$(TARGET_COPY_OUT_VENDOR)/bin/pm-proxy \
     vendor/xiaomi/ginkgo/proprietary/vendor/bin/pm-service:$(TARGET_COPY_OUT_VENDOR)/bin/pm-service \
@@ -201,6 +219,8 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/camera/arcsoft_calibration_data.bin:$(TARGET_COPY_OUT_VENDOR)/etc/camera/arcsoft_calibration_data.bin \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/camera/camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config.xml \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/camera/cameraconfig.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/cameraconfig.txt \
+    vendor/xiaomi/ginkgo/proprietary/vendor/etc/camera/csidtg_camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/csidtg_camera.xml \
+    vendor/xiaomi/ginkgo/proprietary/vendor/etc/camera/csidtg_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/csidtg_chromatix.xml \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/camera/female_bg.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/female_bg.png \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/camera/female_icon.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/female_icon.png \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/camera/ginkgo_gc02m1_ofilm_ii_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ginkgo_gc02m1_ofilm_ii_chromatix.xml \
@@ -323,6 +343,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/lm/AdaptLaunchFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/AdaptLaunchFeature.xml \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/lm/AppClassifierFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/AppClassifierFeature.xml \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/lm/GameOptimizationFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/GameOptimizationFeature.xml \
+    vendor/xiaomi/ginkgo/proprietary/vendor/etc/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/perf/commonresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/commonresourceconfigs.xml \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/perf/perfboostsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfboostsconfig.xml \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/perf/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml \
@@ -402,22 +423,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/sensors/config/tmx4903.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/tmx4903.json \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/sensors/sns_reg_config:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sns_reg_config \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/thermal-engine-camera.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-camera.conf \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_bootup.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_bootup.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_ese_disableIso.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_ese_disableIso.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_ese_disableIsoRead.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_ese_disableIsoRead.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_nfcon.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_nfcon.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_pnx_chr.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_chr.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_pnx_cui.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_cui.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_pnx_ese_3.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_3.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_pnx_ese_aclog.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_aclog.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_pnx_ese_cplc.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_cplc.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_pnx_ese_fabkey.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_fabkey.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_pnx_ese_free.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_free.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_pnx_ese_keyset.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_keyset.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_pnx_ese_sn.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_sn.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_pnx_ndi.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ndi.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_pnx_pcv.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_pcv.pnscr \
-    vendor/xiaomi/ginkgo/proprietary/vendor/etc/sn100u_pnx_sst.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_sst.pnscr \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/thermal-engine-map.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map.conf \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/thermal-engine-normal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-normal.conf \
     vendor/xiaomi/ginkgo/proprietary/vendor/etc/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
@@ -475,11 +480,18 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/camera.device@3.4-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib/camera.device@3.4-impl.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/com.qualcomm.qti.ant@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.qualcomm.qti.ant@1.0.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/eglSubDriverAndroid.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/eglSubDriverAndroid.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/eglSubDriverAndroid.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/eglSubDriverAndroid.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/libEGL_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libEGL_adreno.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/libEGL_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libEGL_adreno.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/libGLESv1_CM_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLESv1_CM_adreno.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/libGLESv1_CM_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLESv1_CM_adreno.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/libGLESv2_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLESv2_adreno.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/libGLESv2_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLESv2_adreno.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/libQTapGLES.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libQTapGLES.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/libQTapGLES.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libQTapGLES.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/libq3dtools_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libq3dtools_adreno.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/libq3dtools_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libq3dtools_adreno.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/libq3dtools_esx.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libq3dtools_esx.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/egl/libq3dtools_esx.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libq3dtools_esx.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/android.hardware.camera.provider@2.4-impl.so \
@@ -504,6 +516,8 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libAlacSwDec.so:$(TARGET_COPY_OUT_VENDOR)/lib/libAlacSwDec.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libApeSwDec.so:$(TARGET_COPY_OUT_VENDOR)/lib/libApeSwDec.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libC2D2.so:$(TARGET_COPY_OUT_VENDOR)/lib/libC2D2.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libC2D2.so:$(TARGET_COPY_OUT_VENDOR)/lib/libC2D2.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libCB.so:$(TARGET_COPY_OUT_VENDOR)/lib/libCB.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libCB.so:$(TARGET_COPY_OUT_VENDOR)/lib/libCB.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libFlacSwDec.so:$(TARGET_COPY_OUT_VENDOR)/lib/libFlacSwDec.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libGPQTEEC_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/libGPQTEEC_vendor.so \
@@ -528,8 +542,10 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libOmxVideoDSMode.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOmxVideoDSMode.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libOmxVpp.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOmxVpp.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libOpenCL.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOpenCL.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libOpenCL.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOpenCL.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libQSEEComAPI.so:$(TARGET_COPY_OUT_VENDOR)/lib/libQSEEComAPI.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libQTEEConnector_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/libQTEEConnector_vendor.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libRSDriver_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/libRSDriver_adreno.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libRSDriver_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/libRSDriver_adreno.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libSNPE.so:$(TARGET_COPY_OUT_VENDOR)/lib/libSNPE.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libSecureUILib.so:$(TARGET_COPY_OUT_VENDOR)/lib/libSecureUILib.so \
@@ -540,14 +556,30 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libacdb-fts.so:$(TARGET_COPY_OUT_VENDOR)/lib/libacdb-fts.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libacdbloader.so:$(TARGET_COPY_OUT_VENDOR)/lib/libacdbloader.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libacdbrtac.so:$(TARGET_COPY_OUT_VENDOR)/lib/libacdbrtac.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_ad5816g.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_ad5816g.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_ad5823.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_ad5823.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_ak7345.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_ak7345.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_ak7371.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_ak7371.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_bu64244gwz.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_bu64244gwz.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_bu64297.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_bu64297.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_dw9714.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_dw9714.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_dw9716.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_dw9716.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_dw9790a.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_dw9790a.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_ginkgo_gc2375h_ofilm_ii_dw9714.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_ginkgo_gc2375h_ofilm_ii_dw9714.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_ginkgo_imx582_qtech_iii_dw9800.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_ginkgo_imx582_qtech_iii_dw9800.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_ginkgo_ov02a10_sunny_i_dw9714.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_ginkgo_ov02a10_sunny_i_dw9714.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_ginkgo_s5kgm1_ofilm_ii_dw9800.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_ginkgo_s5kgm1_ofilm_ii_dw9800.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_ginkgo_s5kgm1_sunny_i_dw9800.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_ginkgo_s5kgm1_sunny_i_dw9800.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_lc898122.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_lc898122.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_lc898212xd.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_lc898212xd.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_lc898212xd_qc2002.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_lc898212xd_qc2002.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_lc898217xc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_lc898217xc.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_pseudo.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_pseudo.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libactuator_rohm_bu64243gwz.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_rohm_bu64243gwz.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libadiertac.so:$(TARGET_COPY_OUT_VENDOR)/lib/libadiertac.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libadm.so:$(TARGET_COPY_OUT_VENDOR)/lib/libadm.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libadpcmdec.so:$(TARGET_COPY_OUT_VENDOR)/lib/libadpcmdec.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libadreno_utils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libadreno_utils.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libadreno_utils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libadreno_utils.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libadsp_default_listener.so:$(TARGET_COPY_OUT_VENDOR)/lib/libadsp_default_listener.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libadsprpc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libadsprpc.so \
@@ -567,13 +599,20 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libbase64.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbase64.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libbatching.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbatching.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libbccQTI.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbccQTI.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libbccQTI.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbccQTI.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libc++_shared.so:$(TARGET_COPY_OUT_VENDOR)/lib/libc++_shared.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libc2d30_bltlib.so:$(TARGET_COPY_OUT_VENDOR)/lib/libc2d30_bltlib.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libc2d30_bltlib.so:$(TARGET_COPY_OUT_VENDOR)/lib/libc2d30_bltlib.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libcamera_scene.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcamera_scene.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libcapiv2svacnn.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcapiv2svacnn.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libcapiv2vop.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcapiv2vop.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libcdsp_default_listener.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcdsp_default_listener.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libcdsprpc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcdsprpc.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libchromatix_csidtg_common.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_csidtg_common.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libchromatix_csidtg_cpp_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_csidtg_cpp_preview.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libchromatix_csidtg_postproc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_csidtg_postproc.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libchromatix_csidtg_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_csidtg_preview.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libchromatix_csidtg_zsl_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_csidtg_zsl_preview.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libchromatix_ginkgo_gc02m1_ofilm_ii_common.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ginkgo_gc02m1_ofilm_ii_common.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libchromatix_ginkgo_gc02m1_ofilm_ii_cpp_liveshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ginkgo_gc02m1_ofilm_ii_cpp_liveshot.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libchromatix_ginkgo_gc02m1_ofilm_ii_cpp_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ginkgo_gc02m1_ofilm_ii_cpp_preview.so \
@@ -1421,6 +1460,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libdisplaydebug.so:$(TARGET_COPY_OUT_VENDOR)/lib/libdisplaydebug.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libdisplayqos.so:$(TARGET_COPY_OUT_VENDOR)/lib/libdisplayqos.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libdisplayqos.so:$(TARGET_COPY_OUT_VENDOR)/lib/libdisplayqos.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libdng_sdkvendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/libdng_sdkvendor.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libdpps.so:$(TARGET_COPY_OUT_VENDOR)/lib/libdpps.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libdrc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libdrc.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libdrmfs.so:$(TARGET_COPY_OUT_VENDOR)/lib/libdrmfs.so \
@@ -1445,9 +1485,11 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libgralloccore.so:$(TARGET_COPY_OUT_VENDOR)/lib/libgralloccore.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libgrallocutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libgrallocutils.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libgsl.so:$(TARGET_COPY_OUT_VENDOR)/lib/libgsl.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libgsl.so:$(TARGET_COPY_OUT_VENDOR)/lib/libgsl.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libhal_dbg.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhal_dbg.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libhdcpsrm.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhdcpsrm.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libhdmipassthru.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhdmipassthru.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libhdr_tm.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhdr_tm.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libhdr_tm.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhdr_tm.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libidl.so:$(TARGET_COPY_OUT_VENDOR)/lib/libidl.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libizat_client_api.so:$(TARGET_COPY_OUT_VENDOR)/lib/libizat_client_api.so \
@@ -1460,6 +1502,8 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libkeymasterutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libkeymasterutils.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/liblistensoundmodel2.so:$(TARGET_COPY_OUT_VENDOR)/lib/liblistensoundmodel2.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libllvm-glnext.so:$(TARGET_COPY_OUT_VENDOR)/lib/libllvm-glnext.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libllvm-glnext.so:$(TARGET_COPY_OUT_VENDOR)/lib/libllvm-glnext.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libllvm-qcom.so:$(TARGET_COPY_OUT_VENDOR)/lib/libllvm-qcom.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libllvm-qcom.so:$(TARGET_COPY_OUT_VENDOR)/lib/libllvm-qcom.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libloc_core.so:$(TARGET_COPY_OUT_VENDOR)/lib/libloc_core.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/liblocation_api.so:$(TARGET_COPY_OUT_VENDOR)/lib/liblocation_api.so \
@@ -1615,6 +1659,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libperfgluelayer.so:$(TARGET_COPY_OUT_VENDOR)/lib/libperfgluelayer.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libperipheral_client.so:$(TARGET_COPY_OUT_VENDOR)/lib/libperipheral_client.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libpvr.so:$(TARGET_COPY_OUT_VENDOR)/lib/libpvr.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libpvr.so:$(TARGET_COPY_OUT_VENDOR)/lib/libpvr.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libqcci_legacy.so:$(TARGET_COPY_OUT_VENDOR)/lib/libqcci_legacy.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libqdMetaData.so:$(TARGET_COPY_OUT_VENDOR)/lib/libqdMetaData.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libqdi.so:$(TARGET_COPY_OUT_VENDOR)/lib/libqdi.so \
@@ -1644,6 +1689,8 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libremosaic_daemon.so:$(TARGET_COPY_OUT_VENDOR)/lib/libremosaic_daemon.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/librpmb.so:$(TARGET_COPY_OUT_VENDOR)/lib/librpmb.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/librs_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/librs_adreno.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/librs_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/librs_adreno.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/librs_adreno_sha1.so:$(TARGET_COPY_OUT_VENDOR)/lib/librs_adreno_sha1.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/librs_adreno_sha1.so:$(TARGET_COPY_OUT_VENDOR)/lib/librs_adreno_sha1.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libscveBlobDescriptor.so:$(TARGET_COPY_OUT_VENDOR)/lib/libscveBlobDescriptor.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libscveBlobDescriptor_stub.so:$(TARGET_COPY_OUT_VENDOR)/lib/libscveBlobDescriptor_stub.so \
@@ -1661,6 +1708,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libsdm-color.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsdm-color.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libsdm-colormgr-algo.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsdm-colormgr-algo.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libsdm-diag.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsdm-diag.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libsdm-disp-vndapis.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsdm-disp-vndapis.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libsdmcore.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsdmcore.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libsdmextension.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsdmextension.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libsdmutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsdmutils.so \
@@ -1672,7 +1720,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libsensorslog.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsensorslog.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libslimclient.so:$(TARGET_COPY_OUT_VENDOR)/lib/libslimclient.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libsmwrapper.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsmwrapper.so \
-    vendor/xiaomi/ginkgo/proprietary/vendor/lib/libsn100u_fw.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsn100u_fw.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libsns_device_mode_stub.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsns_device_mode_stub.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libsns_fastRPC_util.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsns_fastRPC_util.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/libsns_low_lat_stream_stub.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsns_low_lat_stream_stub.so \
@@ -1730,6 +1777,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/vendor.display.postproc@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.display.postproc@1.0.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/vendor.qti.esepowermanager@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.esepowermanager@1.0.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/vendor.qti.gnss@3.0-service.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.gnss@3.0-service.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib/vendor.qti.hardware.camera.device@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.camera.device@1.0.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/vendor.qti.hardware.capabilityconfigstore@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.capabilityconfigstore@1.0.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/vendor.qti.hardware.cvp@1.0-halimpl.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.cvp@1.0-halimpl.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib/vendor.qti.hardware.cvp@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.cvp@1.0.so \
@@ -1757,11 +1805,18 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/com.qualcomm.qti.uceservice@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.qualcomm.qti.uceservice@2.0.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/com.qualcomm.qti.uceservice@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.qualcomm.qti.uceservice@2.1.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/eglSubDriverAndroid.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/eglSubDriverAndroid.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/eglSubDriverAndroid.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/eglSubDriverAndroid.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/libEGL_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libEGL_adreno.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/libEGL_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libEGL_adreno.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/libGLESv1_CM_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv1_CM_adreno.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/libGLESv1_CM_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv1_CM_adreno.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/libGLESv2_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv2_adreno.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/libGLESv2_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv2_adreno.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/libQTapGLES.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libQTapGLES.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/libQTapGLES.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libQTapGLES.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/libq3dtools_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libq3dtools_adreno.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/libq3dtools_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libq3dtools_adreno.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/libq3dtools_esx.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libq3dtools_esx.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/egl/libq3dtools_esx.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libq3dtools_esx.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so \
@@ -1802,6 +1857,8 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libAlacSwDec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libAlacSwDec.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libApeSwDec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libApeSwDec.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libC2D2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libC2D2.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libC2D2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libC2D2.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libCB.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCB.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libCB.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCB.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libFlacSwDec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libFlacSwDec.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libGPQTEEC_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libGPQTEEC_vendor.so \
@@ -1823,8 +1880,10 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libOmxSwVencMpeg4.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libOmxSwVencMpeg4.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libOmxVpp.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libOmxVpp.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libOpenCL.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libOpenCL.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libOpenCL.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libOpenCL.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libQSEEComAPI.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libQSEEComAPI.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libQTEEConnector_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libQTEEConnector_vendor.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libRSDriver_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libRSDriver_adreno.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libRSDriver_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libRSDriver_adreno.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libSecureUILib.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libSecureUILib.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libStDrvInt.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libStDrvInt.so \
@@ -1833,6 +1892,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libacdbrtac.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libacdbrtac.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libadaptlaunch.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libadaptlaunch.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libadiertac.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libadiertac.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libadreno_utils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libadreno_utils.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libadreno_utils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libadreno_utils.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libadsp_default_listener.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libadsp_default_listener.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libadsprpc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libadsprpc.so \
@@ -1843,6 +1903,8 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libbase64.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbase64.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libbatching.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbatching.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libbccQTI.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbccQTI.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libbccQTI.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbccQTI.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libc2d30_bltlib.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libc2d30_bltlib.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libc2d30_bltlib.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libc2d30_bltlib.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libcapiv2svacnn.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcapiv2svacnn.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libcapiv2vop.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcapiv2vop.so \
@@ -1891,8 +1953,10 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libgralloccore.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgralloccore.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libgrallocutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgrallocutils.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libgsl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgsl.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libgsl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgsl.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libhdcpsrm.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhdcpsrm.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libhdmipassthru.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhdmipassthru.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libhdr_tm.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhdr_tm.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libhdr_tm.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhdr_tm.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libhexagon_nn_stub.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhexagon_nn_stub.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libidl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libidl.so \
@@ -1905,6 +1969,8 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/liblearningmodule.so:$(TARGET_COPY_OUT_VENDOR)/lib64/liblearningmodule.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/liblistensoundmodel2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/liblistensoundmodel2.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libllvm-glnext.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libllvm-glnext.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libllvm-glnext.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libllvm-glnext.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libllvm-qcom.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libllvm-qcom.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libllvm-qcom.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libllvm-qcom.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libloc_api_v02.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libloc_api_v02.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libloc_core.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libloc_core.so \
@@ -1947,6 +2013,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libperfgluelayer.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libperfgluelayer.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libperipheral_client.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libperipheral_client.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libpvr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libpvr.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libpvr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libpvr.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libqcci_legacy.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libqcci_legacy.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libqcmaputils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libqcmaputils.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libqcrilFramework.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libqcrilFramework.so \
@@ -1983,6 +2050,8 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/librilqmiservices.so:$(TARGET_COPY_OUT_VENDOR)/lib64/librilqmiservices.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/librpmb.so:$(TARGET_COPY_OUT_VENDOR)/lib64/librpmb.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/librs_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/librs_adreno.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/librs_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/librs_adreno.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/librs_adreno_sha1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/librs_adreno_sha1.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/librs_adreno_sha1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/librs_adreno_sha1.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libscveBlobDescriptor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libscveBlobDescriptor.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libscveBlobDescriptor_stub.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libscveBlobDescriptor_stub.so \
@@ -2000,6 +2069,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libsdm-color.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsdm-color.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libsdm-colormgr-algo.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsdm-colormgr-algo.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libsdm-diag.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsdm-diag.so \
+    vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libsdm-disp-vndapis.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsdm-disp-vndapis.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libsdmcore.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsdmcore.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libsdmextension.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsdmextension.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/libsdmutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsdmutils.so \
@@ -2122,7 +2192,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/vendor.qti.latency@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.latency@2.0.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/vendor.xiaomi.hardware.mlipay@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.xiaomi.hardware.mlipay@1.0.so \
     vendor/xiaomi/ginkgo/proprietary/vendor/lib64/vendor.xiaomi.hardware.mlipay@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.xiaomi.hardware.mlipay@1.1.so \
-    vendor/xiaomi/ginkgo/proprietary/vendor/libnfc-nxp_RF.conf:$(TARGET_COPY_OUT_VENDOR)/libnfc-nxp_RF.conf \
     vendor/xiaomi/ginkgo/proprietary/vendor/radio/qcril_database/qcril.db:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/qcril.db \
     vendor/xiaomi/ginkgo/proprietary/vendor/radio/qcril_database/upgrade/0_initial.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/0_initial.sql \
     vendor/xiaomi/ginkgo/proprietary/vendor/radio/qcril_database/upgrade/1_version_intro.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/1_version_intro.sql \
